@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/3-enemies/c-patrol.unity
-    guid: cbdbd2056f2a7574295152774e1734f1
+    path: Assets/Scenes/5-Weekly-Task/WeeklyTask-A.unity
+    guid: 2e6c439d1b1773949926d575401c06ee
   m_configObjects: {}

@@ -12,8 +12,6 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 [Uu]ser[Ss]ettings/
-**/Debug/
-
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
@@ -25,8 +23,9 @@
 [Aa]ssets/Plugins/Editor/JetBrains*
 
 # Visual Studio cache directory
-.vs/
-
+.vscode/
+itch/
+.editorconfig
 # Gradle cache directory
 .gradle/
 
@@ -47,7 +46,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-*.exe
 
 # Unity3D generated meta files
 *.pidb.meta
