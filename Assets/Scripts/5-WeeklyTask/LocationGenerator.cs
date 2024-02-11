@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections.Generic;
+using System.Collections;
 
 public class LocationGenerator : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class LocationGenerator : MonoBehaviour
     private bool isDone = false;
 
     public bool shouldUpdate = true;
+
+    private TilemapCaveGenerator caveGenerator;
 
     private void Update()
     {
@@ -24,8 +27,21 @@ public class LocationGenerator : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(StartAsync());
+    }
+
+    private IEnumerator StartAsync()
+    {
+        caveGenerator = tilemap.GetComponent<TilemapCaveGenerator>();
+
+        if (caveGenerator != null && !caveGenerator.IsFinished())
+        {
+            yield return new WaitUntil(() => caveGenerator.IsFinished());
+        }
+
         GenerateLocation();
     }
+
 
     public bool IsDone()
     {
