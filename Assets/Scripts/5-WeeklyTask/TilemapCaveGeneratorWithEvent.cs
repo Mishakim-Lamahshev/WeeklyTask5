@@ -1,27 +1,30 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Collections;
+using System;
 
-public class TilemapCaveGenerator : MonoBehaviour
+public class TilemapCaveGeneratorWithEvent : MonoBehaviour
 {
-
-    [SerializeField] Tilemap tilemap = null;
-    [SerializeField] TileBase wallTile = null;
-    [SerializeField] TileBase floorTile = null;
-    [Range(0, 1)]
-    [SerializeField] float randomFillPercent = 0.5f;
-    [SerializeField] int gridSize = 100;
-    [SerializeField] int simulationSteps = 20;
-    [SerializeField] float pauseTime = 0.1f; // Consider reducing this for quicker generation
+    [SerializeField] private Tilemap tilemap = null;
+    [SerializeField] private TileBase wallTile = null;
+    [SerializeField] private TileBase floorTile = null;
+    [Range(0, 1)][SerializeField] private float randomFillPercent = 0.5f;
+    [SerializeField] private int gridSize = 100;
+    [SerializeField] private int simulationSteps = 20;
+    [SerializeField] private float pauseTime = 0.1f;
 
     private CaveGenerator caveGenerator;
     private bool finished = false;
 
+    public event Action OnGenerationComplete; // Event to notify completion
+
     public bool IsFinished() => finished;
+
+    public Tilemap GetTilemap() => tilemap;
 
     void Start()
     {
-        Random.InitState(100); // Initialize random state for reproducibility
+        UnityEngine.Random.InitState(100); // Initialize random state for reproducibility
         caveGenerator = new CaveGenerator(randomFillPercent, gridSize);
         caveGenerator.RandomizeMap();
         StartCoroutine(SimulateCavePattern()); // Start the simulation coroutine
@@ -37,6 +40,7 @@ public class TilemapCaveGenerator : MonoBehaviour
         }
         finished = true;
         Debug.Log("Simulation completed!");
+        OnGenerationComplete?.Invoke(); // Notify subscribers
     }
 
     private void GenerateAndDisplayTexture(int[,] data)

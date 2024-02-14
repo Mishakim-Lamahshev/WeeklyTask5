@@ -335,13 +335,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 130779374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e90a356eb5e23f943b1e0459951ae50c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d8c718a0bf8dbf42b5a48f992073acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 1972678413}
   numOfMoves: 5
-  shouldUpdate: 1
+  shouldUpdate: 0
 --- !u!1 &419043803
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,16 +772,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 931517247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a41c467a1b6f70e49ac2e8ee51ee7379, type: 3}
+  m_Script: {fileID: 11500000, guid: fe6e06cf3c734f541bf61382672f3753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 931517250}
   wallTile: {fileID: 11400000, guid: 546c35550ead79941af5f505fdd175ec, type: 2}
   floorTile: {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
-  randomFillPercent: 0.432
+  randomFillPercent: 0.5
   gridSize: 100
   simulationSteps: 20
-  pauseTime: 0.01
+  pauseTime: 0.1
 --- !u!850595691 &1186101575
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -891,10 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowedTiles:
-  - {fileID: 11400000, guid: 0cea26e1a47ac8d46850becac1a6c757, type: 2}
   - {fileID: 11400000, guid: 149fb7c95775bc842bc8f54055585274, type: 2}
-  - {fileID: 11400000, guid: 2ad1759387b28444892c8549e6122652, type: 2}
-  - {fileID: 11400000, guid: 8f2cab6dea1a2d147b231cc92eb1f7e2, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

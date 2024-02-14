@@ -367,7 +367,6 @@ GameObject:
   - component: {fileID: 717142072}
   - component: {fileID: 717142075}
   - component: {fileID: 717142074}
-  - component: {fileID: 717142076}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -558,22 +557,6 @@ MonoBehaviour:
     m_Flags: 0
   tilemap: {fileID: 233675177}
   allowedTiles: {fileID: 1037331818}
---- !u!114 &717142076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717142071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e90a356eb5e23f943b1e0459951ae50c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tilemap: {fileID: 233675177}
-  allowedTiles: {fileID: 1037331818}
-  numOfMoves: 5
-  shouldUpdate: 1
 --- !u!1 &1037331816
 GameObject:
   m_ObjectHideFlags: 0
